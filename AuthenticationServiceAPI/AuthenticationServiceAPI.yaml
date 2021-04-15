@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: drugserviceapiprojectdpl
+  name: authenticationserviceapidpl
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: DrugServiceAPIProject
+      app: AuthenticationServiceAPI
   template:
     metadata:
       labels:
-        app: DrugServiceAPIProject
+        app: AuthenticationServiceAPI
     spec:
       containers:
       - name: aksmailorderregg
@@ -23,10 +23,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: drugserviceapiprojectservice
+  name: authenticationserviceapiservice
 spec:
   type: LoadBalancer
   ports:
   - port: 80
   selector:
-    app: DrugServiceAPIProject
+    app: AuthenticationServiceAPI
